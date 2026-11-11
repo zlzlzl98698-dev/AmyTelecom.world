@@ -1,0 +1,363 @@
+/* Amy博客 (AmyTelecom.world) - 专业网络实验室与品牌化简白主题样式 */
+
+:root {
+  --amy-primary: #2563eb;
+  --amy-primary-hover: #1d4ed8;
+  --amy-accent-green: #10b981;
+  --amy-accent-amber: #f59e0b;
+  --amy-accent-red: #ef4444;
+  --amy-accent-cyan: #06b6d4;
+  
+  --amy-bg-card: #ffffff;
+  --amy-border-card: #e2e8f0;
+  --amy-text-muted: #64748b;
+  --amy-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.dark {
+  --amy-primary: #3b82f6;
+  --amy-primary-hover: #60a5fa;
+  --amy-bg-card: #0f172a;
+  --amy-border-card: #1e293b;
+  --amy-text-muted: #94a3b8;
+}
+
+/* 顶部品牌与导航优化 */
+.VPNavBarTitle .logo {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 1.5px solid var(--amy-border-card) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.VPNavBarTitle .logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25) !important;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .VPNavBarTitle .title {
+  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 监控台风格卡片 */
+.observatory-panel {
+  background: var(--amy-bg-card);
+  border: 1px solid var(--amy-border-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.observatory-panel:hover {
+  border-color: var(--amy-primary);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1);
+}
+
+/* 状态徽章 */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-family: var(--amy-font-mono);
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.status-badge.operational {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.vendor {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.status-badge.unverified {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* 测速条进度条样式 */
+.speed-bar-container {
+  margin: 0.75rem 0;
+}
+
+.speed-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  margin-bottom: 0.25rem;
+  font-family: var(--amy-font-mono);
+}
+
+.speed-bar-track {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.dark .speed-bar-track {
+  background: #1e293b;
+}
+
+.speed-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 解锁状态矩阵表格 */
+.unlock-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+}
+
+.unlock-matrix-table th,
+.unlock-matrix-table td {
+  border: 1px solid var(--amy-border-card);
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+}
+
+.unlock-matrix-table th {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: 600;
+  color: var(--amy-text-muted);
+}
+
+.dark .unlock-matrix-table th {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* 推广免责提醒卡片 */
+.aff-disclaimer-box {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px dashed rgba(59, 130, 246, 0.3);
+  border-radius: 8px;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.825rem;
+  color: var(--amy-text-muted);
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+/* 按钮样式 */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.25);
+}
+
+.cta-button:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px -2px rgba(37, 99, 235, 0.35);
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: var(--amy-primary) !important;
+  border: 1px solid var(--amy-primary);
+  box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+/* 拓扑图样式 */
+.topology-diagram {
+  background: #090d16;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 1.25rem;
+  font-family: var(--amy-font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  border: 1px solid #1e293b;
+}
+
+/* 页面大纲与强调区块 */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--amy-primary);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   Hero 区域全局居中展示与大气科技风排版
+   ========================================================= */
+.VPHero {
+  padding: 56px 24px 32px !important;
+  text-align: center !important;
+}
+
+.VPHero .container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+.VPHero .main {
+  width: 100% !important;
+  max-width: 960px !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.VPHero .heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.VPHero .name {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  align-self: center !important;
+  font-size: clamp(2.4rem, 4.8vw, 3.4rem) !important;
+  line-height: 1.18 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0.8rem !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #06b6d4 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.dark .VPHero .name {
+  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 50%, #818cf8 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.VPHero .text {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  align-self: center !important;
+  font-size: clamp(1.85rem, 3.8vw, 2.75rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: #0f172a !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+.dark .VPHero .text {
+  color: #f1f5f9 !important;
+}
+
+.VPHero .tagline {
+  display: block !important;
+  width: 100% !important;
+  align-self: center !important;
+  font-size: clamp(0.95rem, 1.8vw, 1.125rem) !important;
+  line-height: 1.85 !important;
+  color: #475569 !important;
+  max-width: 840px !important;
+  margin: 0 auto 2.25rem !important;
+  text-align: center !important;
+  white-space: pre-line !important;
+}
+
+.dark .VPHero .tagline {
+  color: #94a3b8 !important;
+}
+
+.VPHero .actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin: 0 auto !important;
+  flex-wrap: wrap !important;
+}
+
+.VPHero .actions .VPButton {
+  border-radius: 9999px !important;
+  padding: 0 28px !important;
+  height: 46px !important;
+  line-height: 44px !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+/* 首页特性模块与底部间距优化 */
+.VPFeatures {
+  max-width: 1152px !important;
+  margin: 0 auto !important;
+}
+

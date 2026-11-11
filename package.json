@@ -1,0 +1,15 @@
+{
+  "name": "amytelecom-world",
+  "version": "1.0.0",
+  "description": "Amy博客 (AmyTelecom.world) - 专业跨境网络加速与 42 家机场评测知识图谱",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build && pagefind --site .vitepress/dist && node -e \"require('fs').copyFileSync('.htaccess', '.vitepress/dist/.htaccess')\"",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "pagefind": "^1.3.0",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  }
+}
